@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <title>elytra.js</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a> |
+      <a href="/datamodel.html">Data Models</a> |
+      <a href="/component.html">Components</a> |
+      <a href="/watcher.html">Watchers</a> |
+      <a href="/find.html">Element Finder</a> |
+      <a href="/text.html">Text Consumer</a>
+    </nav>
+    <h1>Text Consumer</h1>
+    <p>The purpose of a text consumer is to shorten a common pattern. Often an element's text will need to follow the data model, so a callback to do this is built in to every element.</p>
+    <pre>
+      <code>
+        &lt;p id="text"&gt;&lt;p&gt;
+        &lt;p id="count"&gt;&lt;p&gt;
+      </code>
+    </pre>
+    <pre>
+      <code>
+        elytra.add("model", {
+          text: "Hello World!",
+          count: 0
+        });
+        elytra.model.text.watcher = document.find.text.text;
+        elytra.model.count.watcher = document.find.count.text;
+      </code>
+    </pre>
+  </body>
+</html>

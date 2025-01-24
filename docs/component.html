@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <title>elytra.js</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a> |
+      <a href="/datamodel.html">Data Models</a> |
+      <a href="/component.html">Components</a> |
+      <a href="/watcher.html">Watchers</a> |
+      <a href="/find.html">Element Finder</a> |
+      <a href="/text.html">Text Consumer</a>
+    </nav>
+    <h1>Components</h1>
+    <p>The purpose of components is to reuse a specific set of behaviors or HTML structure in many places. They can be customized using properties which can be set in both the HTML and JS in the same way as the id property.</p>
+    <h2>Example using custom behavior and property</h2>
+    <pre>
+      <code>
+        elytra.component("funbutton", {
+          config: {
+            onclick() {
+              alert("Fun ".repeat(this.exclamations));
+            },
+            style: {
+              fontSize: "30px",
+              background: "blue",
+              color: "white",
+            }
+          },
+          props: ["exclamations"]
+        });
+      </code>
+    </pre>
+    <h2>Example using custom HTML structure</h2>
+    <pre>
+      <code>
+        elytra.component("funlist", {
+          content: items =>
+            `&lt;ul&gt;${items.split(",").map(item =&gt; `&lt;li&gt;${item}&lt;/li&gt;`).join("")}&lt;/ul&gt;`
+        });
+      </code>
+    </pre>
+  </body>
+</html>
