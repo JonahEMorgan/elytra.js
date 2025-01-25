@@ -1,0 +1,22 @@
+html {
+	font-family: sans-serif;
+}
+
+body {
+	max-width: 800px;
+	margin: auto;
+}
+
+em {
+	font-family: serif;
+}
+
+h1, h2 {
+	border-bottom: 1px solid gray;
+}
+
+pre {
+	background: lightgray;
+	border-radius: 10px;
+	padding: 0 20px;
+}

@@ -2,29 +2,30 @@
 <html>
   <head>
     <title>elytra.js</title>
+    <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
     <nav>
-      <a href="/">Home</a> |
-      <a href="/datamodel.html">Data Models</a> |
-      <a href="/component.html">Components</a> |
-      <a href="/watcher.html">Watchers</a> |
-      <a href="/find.html">Element Finder</a> |
-      <a href="/text.html">Text Consumer</a>
+      <a href="./">Home</a> |
+      <a href="./datamodel.html">Data Models</a> |
+      <a href="./component.html">Components</a> |
+      <a href="./watcher.html">Watchers</a> |
+      <a href="./find.html">Element Finder</a> |
+      <a href="./text.html">Text Consumer</a>
     </nav>
     <h1>Element Finder</h1>
     <p>The purpose of the element finder is to make accessing HTML more concise. Typically people will use getElementById or getElementsByClassName, but the element finder combines both and is integrated into every single html element on the page. The example below shows how to use it.</p>
     <pre>
       <code>
-        &lt;button class="btn"&gt;Click Me&lt;button&gt;
-        &lt;p id="description"&gt;Please click the button.&lt;p&gt;
+&lt;button class="btn"&gt;Click Me&lt;button&gt;
+&lt;p id="description"&gt;Please click the button.&lt;p&gt;
       </code>
     </pre>
     <pre>
       <code>
-        for(var button of document.find.btn)
-          console.log(button.textContent);
-        document.find.description.textContent += " It's important!";
+for(var button of document.find.btn)
+  console.log(button.textContent);
+document.find.description.textContent += " It's important!";
       </code>
     </pre>
   </body>

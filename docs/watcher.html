@@ -2,25 +2,26 @@
 <html>
   <head>
     <title>elytra.js</title>
+    <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
     <nav>
-      <a href="/">Home</a> |
-      <a href="/datamodel.html">Data Models</a> |
-      <a href="/component.html">Components</a> |
-      <a href="/watcher.html">Watchers</a> |
-      <a href="/find.html">Element Finder</a> |
-      <a href="/text.html">Text Consumer</a>
+      <a href="./">Home</a> |
+      <a href="./datamodel.html">Data Models</a> |
+      <a href="./component.html">Components</a> |
+      <a href="./watcher.html">Watchers</a> |
+      <a href="./find.html">Element Finder</a> |
+      <a href="./text.html">Text Consumer</a>
     </nav>
     <h1>Watchers</h1>
     <p>The purpose of watchers is to connect the data model to HTML. When changes occur in the data model, callbacks are called and modify the HTML. Watchers can be used as following.</p>
     <pre>
       <code>
-        elytra.add("model", {
-          text: "Hello World!"
-        });
-        elytra.model.text.watcher = console.log;
-        elytra.model.text = "Wow!";
+elytra.add("model", {
+  text: "Hello World!"
+});
+elytra.model.text.watcher = console.log;
+elytra.model.text = "Wow!";
       </code>
     </pre>
   </body>

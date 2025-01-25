@@ -2,32 +2,33 @@
 <html>
   <head>
     <title>elytra.js</title>
+    <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
     <nav>
-      <a href="/">Home</a> |
-      <a href="/datamodel.html">Data Models</a> |
-      <a href="/component.html">Components</a> |
-      <a href="/watcher.html">Watchers</a> |
-      <a href="/find.html">Element Finder</a> |
-      <a href="/text.html">Text Consumer</a>
+      <a href="./">Home</a> |
+      <a href="./datamodel.html">Data Models</a> |
+      <a href="./component.html">Components</a> |
+      <a href="./watcher.html">Watchers</a> |
+      <a href="./find.html">Element Finder</a> |
+      <a href="./text.html">Text Consumer</a>
     </nav>
     <h1>Data Models</h1>
     <p>The purpose of data models is a globally scoped place to keep data. When a data model is constructed from an object, it is recursively mutated to observe changes and send events using callbacks. The following example shows how to create a data model.</p>
     <pre>
       <code>
-        elytra.add("model", {
-          text: "Hello World!",
-          count: 0
-        });
+elytra.add("model", {
+  text: "Hello World!",
+  count: 0
+});
       </code>
     </pre>
     <p>Once the data model is created, it is a member of the elytra namespace. Now, properties can be get and set in the following ways.</p>
     <pre>
       <code>
-        elytra.model.text = "Oh no!";
-        console.log(elytra.model.text.value);
-        elytra.mode.count.value++;
+elytra.model.text = "Oh no!";
+console.log(elytra.model.text.value);
+elytra.mode.count.value++;
       </code>
     </pre>
   </body>
