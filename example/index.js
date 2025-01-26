@@ -18,7 +18,7 @@ elytra.component("funbutton", {
 });
 
 elytra.component("funlist", {
-	content: items =>
+	init: items =>
 		`<ul>${items.split(",").map(item => `<li>${item}</li>`).join("")}</ul>`
 });
 

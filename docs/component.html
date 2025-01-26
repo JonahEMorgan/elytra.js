@@ -37,7 +37,7 @@ elytra.component("funbutton", {
     <pre>
       <code>
 elytra.component("funlist", {
-  content: items =>
+  init: items =>
     `&lt;ul&gt;${items.split(",").map(item =&gt; `&lt;li&gt;${item}&lt;/li&gt;`).join("")}&lt;/ul&gt;`
 });
       </code>

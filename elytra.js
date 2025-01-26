@@ -30,7 +30,7 @@ var elytra = (() => {
         var properties = Object.keys(model);
         model._values = {};
         model._watchers = {};
-        for(let property of properties) {
+        for(let property of properties)
             if(typeof model[property] === "object")
                 watch(model[property]);
             else {
@@ -58,41 +58,40 @@ var elytra = (() => {
                     }
                 });
             }
-        }
     };
 
     var reset = (current, template, ignore) => {
-        for(var property in template) {
-            if(property in current && !ignore.includes(property)) {
+        for(var property in template)
+            if(property in current && !ignore.includes(property))
                 if(property in current._values)
                     current[property] = template[property];
                 else if("_values" in current[property])
                     reset(current[property], template[property]);
-            }
-        }
     };
 
     var configure = (object, config) => {
         for(var property in config)
-            if(property in object) {
+            if(property in object)
                 if(typeof config[property] == "object")
                     configure(object[property], config[property]);
                 else
                     object[property] = config[property];
-            }
     };
 
     var component = (element, config) => {
-        if("config" in config)
-            configure(element, config.config);
-        if("content" in config)
-            element.innerHTML = config.content(element.innerHTML);
         if("props" in config)
             for(var property of config.props)
                 Object.defineProperty(element, property, {
                     get: () => element.getAttribute(property),
                     set: value => element.setAttribute(property, value)
                 });
+        if("config" in config)
+            configure(element, config.config);
+        if("init" in config)
+            if(config.init.length > 0)
+                element.innerHTML = config.init(element.innerHTML);
+            else
+                config.init();
     }
 
     return {
