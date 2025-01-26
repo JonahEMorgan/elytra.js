@@ -89,9 +89,9 @@ var elytra = (() => {
             configure(element, config.config);
         if("init" in config)
             if(config.init.length > 0)
-                element.innerHTML = config.init(element.innerHTML);
+                element.innerHTML = config.init.call(element, element.innerHTML);
             else
-                config.init();
+                config.init.call(element);
     }
 
     return {

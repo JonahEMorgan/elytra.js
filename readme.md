@@ -1,6 +1,6 @@
 ![elytra.js logo](docs/logo.svg)
 # elytra.js
-An extremely lightweight JS toolkit for components and data watching. When minified, the source code is only 1.59 kilboytes or 1,638 bytes.
+An extremely lightweight JS toolkit for components and data watching. When minified, the source code is only 1.61 kilboytes or 1,651 bytes.
 
 ## Getting started
 - Check out our [docs](http://jonahemorgan.github.io/elytra.js)
